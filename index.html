@@ -10,6 +10,9 @@
     <h1>MDN - WebRTC: Still photo capture demo</h1>
     <p>This example demonstrates how to set up a media stream using your built-in webcam, fetch an image from that stream, and create a PNG using that image. <em>Original article:</em> <a href="https://developer.mozilla.org/docs/Web/API/WebRTC_API/Taking_still_photos" target="_blank">Taking still photos with WebRTC</a>. <em>Original code:</em> <a href="https://github.com/mdn/samples-server/tree/master/s/webrtc-capturestill" target="_blank">https://github.com/mdn/samples-server/tree/master/s/webrtc-capturestill</a>. 2018-09-15 JFS.</p>
     <p>Switch to: <a href="http://www.jeffersonscher.com/temp/webcamstill/index.html" onclick="if(location.protocol != 'http:')location.href=location.href.replace('https://', 'http://'); return false;">HTTP</a> or <a href="https://www.jeffersonscher.com/temp/webcamstill/index.html" onclick="if(location.protocol != 'https:')location.href=location.href.replace('http://', 'https://'); return false;">HTTPS</a> (Chrome only allows HTTPS per <a href="https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia#Browser_compatibility" target="_blank">MDN</a>)</p>
+    
+    <button id="startStreamButton">Start Stream</button> 
+    
     <div style="position:relative; height: 240px;">
       <div class="camera">
         <video id="video">Video stream not available.</video>
@@ -19,6 +22,7 @@
         <img id="photo" alt="The screen capture will appear in this box."> 
       </div>
     </div>
+    
 
     <!-- Never displayed -->
     <canvas id="canvas"></canvas>

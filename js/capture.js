@@ -24,15 +24,16 @@
     canvas = document.getElementById('canvas');
     photo = document.getElementById('photo');
     startbutton = document.getElementById('startbutton');
+    startStreamButton = document.getElementById('startStreamButton');
 
-	navigator.mediaDevices.getUserMedia({video: true})
-	.then(function(stream) {
-        video.srcObject = stream;
-        video.play();
-	})
-	.catch(function(err) {
-	  console.log("An error occured! " + err);
-	});
+    navigator.mediaDevices.getUserMedia({video: true})
+    .then(function(stream) {
+          video.srcObject = stream;
+          // video.play();
+    })
+    .catch(function(err) {
+      console.log("An error occured! " + err);
+    });
 
     video.addEventListener('canplay', function(ev){
       if (!streaming) {
@@ -57,6 +58,10 @@
       takepicture();
       ev.preventDefault();
     }, false);
+
+    startStreamButton.addEventListener('click', function(ev) {
+      video.play();
+    })
     
     clearphoto();
   }
